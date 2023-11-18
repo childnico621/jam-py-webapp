@@ -116,6 +116,6 @@ cd /opt/SARA
 wget https://github.com/childnico621/jam-py-webapp/archive/refs/heads/develop.zip
 unzip main.zip
 # Run application
-python /opt/SARA/laboratorio-final-main/app/server.py > /opt/SARA/laboratorio-final-main/app/output.log 2>&1 &
+python /opt/SARA/sample-app/server.py > /opt/SARA/sample-app/output.log 2>&1 &
 EOF
 }
