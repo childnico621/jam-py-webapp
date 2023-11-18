@@ -113,7 +113,7 @@ export PATH="$VIRTUAL_ENV/bin:$PATH"
 sudo python3 -m pip install jam.py
 # Create SARA jam-project (Github download)
 cd /opt/SARA
-wget https://github.com/childnico621/jam-py-webapp/archive/refs/heads/develop.zip
+sudo wget https://github.com/childnico621/jam-py-webapp/archive/refs/heads/develop.zip
 sudo unzip develop.zip
 # Run application
 sudo python3 /opt/SARA/jam-py-webapp-develop/sample-app/server.py > /opt/SARA/jam-py-webapp-develop/sample-app/output.log 2>&1 &
