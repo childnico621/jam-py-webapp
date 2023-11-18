@@ -97,25 +97,25 @@ resource "aws_instance" "EC2_Ubuntu_LaboratorioFinal_VSCode" {
   user_data = <<EOF
 #!/bin/bash
 # Update and upgrade--> Operating System and TZ
-apt-get update
-apt-get upgrade -y
-export TZ=America/Bogota
-ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-apt-get install -y tzdata
-apt-get install -y unzip
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo export TZ=America/Bogota
+sudo ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+sudo apt-get install -y tzdata
+sudo apt-get install -y unzip
 # Install--> python3, pip package manager and virtualenv
-apt-get install -y python3 python3-pip python3-virtualenv
+sudo apt-get install -y python3 python3-pip python3-virtualenv
 # Create--> Python3 virtualenv
 export VIRTUAL_ENV=/opt/SARA/
-python3 -m virtualenv $VIRTUAL_ENV
+sudo python3 -m virtualenv $VIRTUAL_ENV
 export PATH="$VIRTUAL_ENV/bin:$PATH"
 # Install--> jam-py package
-python3 -m pip install jam.py
+sudo python3 -m pip install jam.py
 # Create SARA jam-project (Github download)
 cd /opt/SARA
 wget https://github.com/childnico621/jam-py-webapp/archive/refs/heads/develop.zip
-unzip main.zip
+sudo unzip develop.zip
 # Run application
-python /opt/SARA/sample-app/server.py > /opt/SARA/sample-app/output.log 2>&1 &
+sudo python3 /opt/SARA/jam-py-webapp-develop/sample-app/server.py > /opt/SARA/jam-py-webapp-develop/sample-app/output.log 2>&1 &
 EOF
 }
